@@ -19,6 +19,29 @@ function repeatStr(n, s) {
 
 // const repeatStr = (n,s) => s.repeat(n) ;
 
+// Is there a vowel in there? - https://www.codewars.com/kata/57cff961eca260b71900008f/train/javascript
+// 06/03/2023
+
+/* 
+Given an array of numbers, check if any of the numbers are the character codes for lower case vowels (a, e, i, o, u).
+
+If they are, change the array value to a string of that vowel.
+
+Return the resulting array.
+*/
+
+function isVow(arr) {
+  const vowelCodes = {
+    97: "a",
+    101: "e",
+    105: "i",
+    111: "o",
+    117: "u",
+  };
+  return arr.map((num) => (vowelCodes[num] ? vowelCodes[num] : num));
+}
+
 module.exports = {
   repeatStr,
+  isVow,
 };
