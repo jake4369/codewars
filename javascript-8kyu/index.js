@@ -10,8 +10,14 @@ Examples (input -> output)
 */
 
 function repeatStr(n, s) {
-  return "";
+  let str = "";
+  for (let i = 0; i < n; i++) {
+    str += s;
+  }
+  return str;
 }
+
+// const repeatStr = (n,s) => s.repeat(n) ;
 
 module.exports = {
   repeatStr,
