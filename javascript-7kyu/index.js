@@ -178,3 +178,70 @@ const consecutive = (arr) => {
 
   return sum;
 };
+
+// 11-04-2023 Insert dashes
+// https://www.codewars.com/kata/55960bbb182094bc4800007b
+
+/*
+Write a function insertDash(num) that will insert dashes ('-') between each two odd digits in num. 
+For example: if num is 454793 the output should be 4547-9-3. Don't count zero as an odd digit.
+
+Note that the number will always be non-negative (>= 0).
+*/
+
+const insertDash = (num) => {
+  const numStr = String(num);
+  let result = "";
+
+  for (let i = 0; i < numStr.length; i++) {
+    const currentDigit = numStr[i];
+    const nextDigit = numStr[i + 1];
+
+    if (
+      currentDigit % 2 !== 0 &&
+      nextDigit % 2 !== 0 &&
+      currentDigit !== "0" &&
+      nextDigit !== "0"
+    ) {
+      result += currentDigit + "-";
+    } else {
+      result += currentDigit;
+    }
+  }
+
+  return result.replace(/-$/, "");
+
+  // Alternate solution
+  // return String(num).replace(/([13579])(?=[13579])/g, '$1-');
+};
+
+// 10-04-2023 Decreasing Inputs
+// https://www.codewars.com/kata/555de49a04b7d1c13c00000e
+
+/*
+This kata is all about adding numbers.
+
+You will create a function named add. It will return the sum of all the arguments. Sounds easy, doesn't it?
+
+Well Here's the Twist. The inputs will gradually decrease with their index as parameter to the function.
+
+  add(3,4,6); 
+
+  returns ( 3 / 1 ) + ( 4 / 2 ) + ( 6 / 3 ) = 7
+
+  Remember the function will return 0 if no arguments are passed and it must round the result if sum is a float.
+
+  Example
+  
+    add(); //=> 0
+    add(1,2,3); //=> 3
+    add(1,4,-6,20); //=> 6
+*/
+
+const add = (...args) => {
+  return Math.round(
+    args.reduce((acc, cur, index) => acc + cur / (index + 1), 0)
+  );
+};
+
+add();
