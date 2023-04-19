@@ -368,3 +368,34 @@ const sortMyString = (s) => {
   const oddChars = charArr.filter((char, index) => index % 2 !== 0).join("");
   return `${evenChars} ${oddChars}`;
 };
+
+// 19-04-2023 C.Wars
+// https://www.codewars.com/kata/55968ab32cf633c3f8000008
+
+/*
+Normally we have firstname, middle and the last name but there may be more 
+than one word in a name like a South Indian one.
+
+Similar to those kinda names we need to initialize the names.
+
+See the pattern below:
+
+initials('code wars') => returns C.Wars 
+initials('Barack Hussain obama') => returns B.H.Obama 
+Complete the function initials.
+
+Names are separated by exactly one space in the input, without leading or 
+trailing spaces. Names will always be lowercase, except optionally their first letter.
+*/
+
+const initials = (n) => {
+  const capitalizedNames = n
+    .split(" ")
+    .map(([firstLetter, ...rest]) => firstLetter.toUpperCase() + rest.join(""));
+
+  return capitalizedNames
+    .map((name, index) =>
+      index !== capitalizedNames.length - 1 ? name.slice(0, 1) : name
+    )
+    .join(".");
+};
