@@ -192,3 +192,19 @@ function whoIsPaying(name) {
 
   return name.length <= 2 ? [name] : [name, name.slice(0, 2)];
 }
+
+// Reverse List Order
+// https://www.codewars.com/kata/53da6d8d112bd1a0dc00008b
+function reverseList(list) {
+  // Solution 1:
+  // const reversedList = [];
+  // for (let i = list.length - 1; i >= 0; i--) {
+  //   reversedList.push(list[i]);
+  // }
+  // return reversedList;
+  // Solution 2:
+  // return list.reverse();
+}
+
+// Solution 3:
+// const reverseList = list => list.reverse();
