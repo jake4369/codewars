@@ -180,3 +180,15 @@ function greet(language) {
 
   // return languages[language] || languages["english"];
 }
+
+// Who is going to pay for the wall?
+// https://www.codewars.com/kata/58bf9bd943fadb2a980000a7
+function whoIsPaying(name) {
+  // if (name.length <= 2) {
+  //   return [name];
+  // } else {
+  //   return [name, name.slice(0, 2)];
+  // }
+
+  return name.length <= 2 ? [name] : [name, name.slice(0, 2)];
+}
