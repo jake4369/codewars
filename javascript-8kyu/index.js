@@ -144,3 +144,33 @@ const bmi = (weight, height) => {
 const flip = (d, a) => {
   return d === "R" ? a.sort((a, b) => a - b) : a.sort((a, b) => b - a);
 };
+
+// 15-07-2023 Welcome!
+// https://www.codewars.com/kata/577ff15ad648a14b780000e7
+const languages = {
+  english: "Welcome",
+  czech: "Vitejte",
+  danish: "Velkomst",
+  dutch: "Welkom",
+  estonian: "Tere tulemast",
+  finnish: "Tervetuloa",
+  flemish: "Welgekomen",
+  french: "Bienvenue",
+  german: "Willkommen",
+  irish: "Failte",
+  italian: "Benvenuto",
+  latvian: "Gaidits",
+  lithuanian: "Laukiamas",
+  polish: "Witamy",
+  spanish: "Bienvenido",
+  swedish: "Valkommen",
+  welsh: "Croeso",
+};
+
+function greet(language) {
+  if (language && languages.hasOwnProperty(language)) {
+    return languages[language];
+  } else {
+    return languages["english"];
+  }
+}
