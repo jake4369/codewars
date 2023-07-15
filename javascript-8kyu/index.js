@@ -168,9 +168,15 @@ const languages = {
 };
 
 function greet(language) {
-  if (language && languages.hasOwnProperty(language)) {
-    return languages[language];
-  } else {
-    return languages["english"];
-  }
+  // if (language && languages.hasOwnProperty(language)) {
+  //   return languages[language];
+  // } else {
+  //   return languages["english"];
+  // }
+
+  return language && languages.hasOwnProperty(language)
+    ? languages[language]
+    : languages["english"];
+
+  // return languages[language] || languages["english"];
 }
